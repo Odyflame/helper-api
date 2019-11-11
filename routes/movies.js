@@ -40,4 +40,11 @@ router.put('/movies/:id', async (req, res, next) => {
    res.sendStatus(200);
 });
 
+router.get('/movies/:id/scripts', async (req, res, next) => {
+    const id = req.params.id;
+
+    const scripts = await movieService.getMovieScript(id);
+    res.json(scripts);
+})
+
 module.exports = router;
