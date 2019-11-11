@@ -43,7 +43,7 @@ router.put('/movies/:id', async (req, res, next) => {
 router.get('/movies/:id/scripts', async (req, res, next) => {
     const id = req.params.id;
 
-    const scripts = await movieService.getMovieScript(id);
+    const scripts = await movieService.getMovieScripts(id);
     res.json(scripts);
 })
 
