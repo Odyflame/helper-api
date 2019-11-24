@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+//const parsesrt = require('./bin/scripts/parseSMI');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
