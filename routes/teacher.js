@@ -24,4 +24,4 @@ router.post('/teachers' ,async (req, res, next) =>{
     res.sendStatus(200);
 })
 
-module.exports = router;
+module.exports= router;
