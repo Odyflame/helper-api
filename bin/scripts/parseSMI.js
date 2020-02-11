@@ -61,7 +61,7 @@ async function postScriptData(scripts) {
      for(element of scripts){
 
          const script = {
-             movie_id : 1,
+             movie_id : 7,
              begin_at: element.startTime,
              end_at: element.endTime,
              script: element.text,
@@ -69,7 +69,7 @@ async function postScriptData(scripts) {
 
          const result = await knex('movie_scripts').insert(script)
          //return result;
-
+         //knex.debug(true);
          console.log(result);
      }
 
@@ -80,10 +80,18 @@ async function parseAndPost() {
 
  /*   let scripts2 = parser.parseFile('./Sister.smi', options = {});
     console.log(JSON.stringify(scripts2));*/
-
+    //1 -> spiderman
+    //2 -> Batman (DarkKnight
+    //3 -> joker( ToyStory )
+    //4 -> saw( himym )
+    //5 -> superman ( Frozen_Hot )
+    //6 -> endgame ( Avengers )
+    //7 -> IU ( flu )
     const fs = require("fs");
-    const srt = fs.readFileSync('bin/scripts/Sister.srt', "utf8");
+    const srt = fs.readFileSync('bin/scripts/The_Flu.srt', "utf8");
     let scripts = srtparser.fromSrt(srt, true);
+
+
 
     //const scripts2 = srtparser.fromSrt(srt);
     //const scripts = parseSmi('./Sister.smi');

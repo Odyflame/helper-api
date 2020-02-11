@@ -5,6 +5,8 @@ exports.up = async (knex) => {
       table.string('title');
       table.string('genre');
       table.string('image');
+      table.string('StartTime');
+      table.string('Summary');
       table.timestamps(true, true);
   });
 

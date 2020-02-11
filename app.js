@@ -27,8 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 const movieParser = bodyParser.urlencoded({extended: false});
 app.use(express.static('static'));
 
+//app.use('/', parsesrt);
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/', movieRouter);
 app.use('/', teacherRouter);
 

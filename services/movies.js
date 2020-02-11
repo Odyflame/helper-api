@@ -17,11 +17,11 @@ module.exports = {
     },
 
     updateMovie: async (movie) => {
-        const result = await knex('movies').update(movie).where({ id: movie.id });
+        const result = await knex('movies').update(movie).where({ title: movie.title});
     },
 
     getMovieScripts: async (movieId) => {
-        const scripts = await knex('movie_scripts').where({'movie_id': movieId});
+        const scripts = await knex('movie_scripts').where({'movie_id': movieId}).orderBy('id');
         return scripts;
     },
 
@@ -31,6 +31,18 @@ module.exports = {
 
     updateMovieScrips : async (script) => {
         const result = await knex('movie_scripts').update(script).where({ id: script.id, movie_id: script.movie_id });
-    }
+    },
 
+    updateMovieStartTime : async(movieId) =>{
+        const result = await knex('movies').update(movieId).where({ updated_at : movieId.updated_at})
+    },
+
+    getMovieStartTime : async(movieId) =>{
+        const result = await knex('movies').where({ id : movieID})
+        return result;
+    },
+
+    deleteMovie : async (id) =>{
+        const movieResult = await knex('movies').where({'id' : id})
+    }
 };
